@@ -30,6 +30,12 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	class UCameraComponent* CameraComp;
 
+	// Sets the CameraComp's relative location to CameraRShoulderLocation ArrowComponent.
+	void SetCameraShoulderLocation();
+
+	// Sets The CameraComp's relative location to the CameraOriginLocation arrow component
+	void SetCameraOriginLocation();
+
 
 public:
 	// Called every frame
