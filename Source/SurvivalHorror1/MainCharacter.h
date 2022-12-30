@@ -19,21 +19,15 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	// Arrow Component for the Camera shoulder viewpoint location
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	class UArrowComponent *CameraRShoulderLocation;
-
 	// Arrow Component for the Camera Origin viewpoint location
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	class UArrowComponent *CameraOriginLocation;
 
+	// Camera Component
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	class UCameraComponent* CameraComp;
+	class UCameraComponent *CameraComp;
 
-	// Sets the CameraComp's relative location to CameraRShoulderLocation ArrowComponent.
-	void SetCameraShoulderLocation();
-
-	// Sets The CameraComp's relative location to the CameraOriginLocation arrow component
+	// Sets The CameraComp's relative location to the CameraOriginLocation ArrowComponent
 	void SetCameraOriginLocation();
 
 
