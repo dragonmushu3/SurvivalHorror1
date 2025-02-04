@@ -2,11 +2,6 @@
 
 
 #include "MainCharacter.h"
-#include "GameFramework/Actor.h"
-#include "Camera/CameraComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/CapsuleComponent.h"
-#include "Components/ArrowComponent.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
@@ -15,12 +10,12 @@ AMainCharacter::AMainCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 
 	// Instantiating your class Components
-	CameraOriginLocation = CreateDefaultSubobject<UArrowComponent>(TEXT("CameraOriginLocation"));
+	//CameraOriginLocation = CreateDefaultSubobject<UArrowComponent>(TEXT("CameraOriginLocation"));
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp"));
 
 	// Attaching the Components to the default character's Skeletal Mesh Component
-	CameraOriginLocation->SetupAttachment(GetCapsuleComponent());
-	CameraComp->SetupAttachment(GetCapsuleComponent());
+	//CameraOriginLocation->SetupAttachment(GetMesh());
+	CameraComp->SetupAttachment(GetMesh(),"head");
 }
 
 // Called when the game starts or when spawned
@@ -41,10 +36,10 @@ void AMainCharacter::Tick(float DeltaTime)
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	PlayerInputComponent->BindAction("SwitchCamera", IE_Pressed, this, &AMainCharacter::SetCameraOriginLocation);
+	//PlayerInputComponent->BindAction("SwitchCamera", IE_Pressed, this, &AMainCharacter::SetCameraOriginLocation);
 }
 
-void AMainCharacter::SetCameraOriginLocation()
-{
-	CameraComp->SetRelativeLocation(CameraOriginLocation->GetRelativeLocation());
-}
+//void AMainCharacter::SetCameraOriginLocation()
+//{
+//	CameraComp->SetRelativeLocation(CameraOriginLocation->GetRelativeLocation());
+//}

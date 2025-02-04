@@ -4,6 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/ArrowComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "GameFramework/Actor.h"
+#include "Camera/CameraComponent.h"
+#include "Components/SceneComponent.h"
 #include "MainCharacter.generated.h"
 
 UCLASS()
@@ -20,15 +25,15 @@ protected:
 	virtual void BeginPlay() override;
 
 	// Arrow Component for the Camera Origin viewpoint location
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	class UArrowComponent *CameraOriginLocation;
+	//UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	//class UArrowComponent *CameraOriginLocation;
 
 	// Camera Component
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UCameraComponent *CameraComp;
 
 	// Sets The CameraComp's relative location to the CameraOriginLocation ArrowComponent
-	void SetCameraOriginLocation();
+	//void SetCameraOriginLocation();
 
 
 public:
