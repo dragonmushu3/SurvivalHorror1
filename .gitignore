@@ -21,3 +21,5 @@ Content/MSPresets
 *_BuiltData*
 *.mayaSwatches
 *.tx
+
+*.wav
